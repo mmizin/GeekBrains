@@ -1,0 +1,3 @@
+We are looking for an, Automation engineer. with experience in any of the programming languages,
+who is ready to consider Python as the primary coding language. This system is backend only.
+We are only processing news content (XML & JSON) and exposing it to the clients.

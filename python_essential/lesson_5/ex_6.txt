@@ -1,0 +1,3 @@
+Computer_since: 100(л) 50(пр) 20(лаб).
+Literature: 30(л) — 10(лаб)
+Work_out: — 30(пр) —

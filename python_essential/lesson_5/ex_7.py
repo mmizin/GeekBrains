@@ -12,11 +12,29 @@
 # Подсказка: использовать менеджеры контекста.
 
 import csv
+import json
 from functools import reduce
+
+wages = 0
+count = 1
 
 with open('ex_7.csv') as csv_f:
     csv_reader = csv.reader(csv_f)
 
-    result = [{v.split()[0]: reduce(lambda n, m: n - m, list(map(lambda x: int(x), v.split()[2:])))}
-              for k in csv_reader for v in k]
-    print(result)
+    data = [{v.split()[0]: reduce(lambda n, m: n - m, list(map(lambda x: int(x), v.split()[2:])))}
+            for k in csv_reader for v in k]
+
+for item in data:
+    for key, val in item.items():
+        if val < 0:
+            item.update({key: 'losses_loom_larger_than_gains'})
+        else:
+            wages += val
+            count += 1
+
+
+data.append({'average_profit': wages / count })
+
+with open('ex_7.json', 'w') as outfile:
+    json.dump(data, outfile, indent=4)
+

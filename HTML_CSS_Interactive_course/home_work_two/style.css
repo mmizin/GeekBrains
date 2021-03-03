@@ -1,0 +1,67 @@
+.image_item img {
+    width: 300px;
+    height: 300px;
+}
+
+.nav_logo img{
+    width: 100px;
+}
+
+#goods {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.catalog-goods {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.catalog-goods img {
+    width: 200px;
+    height: 200px;
+}
+
+#store_name .logo img {
+    width: 300px;
+    height: 100px;
+    
+}
+
+.logo {
+    display: grid;
+    justify-content: center;
+}
+
+#navbar ul{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    border: 3px solid black;
+    margin-bottom: 10px;
+    font-size: x-large;
+    justify-items: center;
+}
+
+
+.item_ice_cream {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    margin: 10px;
+    background-color: blanchedalmond;
+}
+
+.caption {
+    text-align: center;
+    font-size: xx-large;
+    margin-top: 50px;
+}
+
+.ingredients {
+    text-align: start;
+}
+
+.body-sections  {
+    display: grid;
+    grid-template-columns: auto auto;
+}

@@ -1,0 +1,71 @@
+####################### 1 #######################
+(venv) 🍀 mmizi ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ for i in range {0..1}; do echo $USER; done
+mmizi
+mmizi
+mmizi
+####################### 2 #######################
+(venv) 🍀 mmizi ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ i=0; while [ $i -le 100 ]; do if (( $i % 2 == 0 )); then echo $i; fi; ((i++)); done
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+80
+82
+84
+86
+88
+90
+92
+94
+96
+98
+100
+####################### 3 #######################
+(venv) 🍀 mmizi ~/Documents/My_projects/GeekBrains/linux/hw_6 (main) 🦄 $ vim test.txt
+(venv) 🍀 mmizi ~/Documents/My_projects/GeekBrains/linux/hw_6 (main) 🦄 $ sudo crontab -e
+crontab: installing new crontab
+(venv) 🍀 mmizi ~/Documents/My_projects/GeekBrains/linux/hw_6 (main) 🦄 $ sudo crontab -l
+*/10 * * * * cp /home/mmizi/Documents/My_projects/GeekBrains/linux/hw_6/test.txt /home/mmizi/Documents/My_projects/GeekBrains/linux/hw_6/test.txt.bak
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux/hw_6 (main) 🦄 $ ll
+total 20
+drwxrwxr-x 2 mmizi mmizi 4096 лют 28 19:14 ./
+drwxrwxr-x 4 mmizi mmizi 4096 лют 28 17:55 ../
+-rw-rw-r-- 1 mmizi mmizi 1051 лют 28 19:14 hw_6.txt
+-rw-rw-r-- 1 mmizi mmizi   45 лют 28 19:02 test.txt
+-rw-r--r-- 1 root  root    45 лют 28 19:10 test.txt.bak

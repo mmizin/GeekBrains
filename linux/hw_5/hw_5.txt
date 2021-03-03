@@ -1,0 +1,88 @@
+################################ 1 #############################
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ mkdir hw_5
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ echo "some text test1" >> file1
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ cp file1 file2
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ ln -s file1 file3
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ rm file1
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ cat file3
+cat: file3: No such file or directory
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ cat file4
+some text test1
+################################ 2 #############################
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ mv file2 new_file2
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ mv file4 new_file4
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ mv file3 new_file3
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ ln -s new_file2 new_file3
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ ln -s new_file2 new_file3
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ mv new_file3 new_file4 hw_5/
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ ll
+total 16
+drwxrwxr-x 3 mmizi mmizi 4096 лют 28 12:28 ./
+drwxr-xr-x 9 mmizi mmizi 4096 лют 28 12:10 ../
+drwxrwxr-x 2 mmizi mmizi 4096 лют 28 12:28 hw_5/
+-rw-rw-r-- 1 mmizi mmizi   16 лют 28 12:15 new_file2
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ ll hw_5/
+total 16
+drwxrwxr-x 2 mmizi mmizi 4096 лют 28 12:28 ./
+drwxrwxr-x 3 mmizi mmizi 4096 лют 28 12:28 ../
+-rw-rw-r-- 1 mmizi mmizi  747 лют 28 12:24 hw_5.txt
+lrwxrwxrwx 1 mmizi mmizi    9 лют 28 12:27 new_file3 -> new_file2
+-rw-rw-r-- 1 mmizi mmizi   16 лют 28 12:14 new_file4
+################################ 3 #############################
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ chmod u+rw file_perm1
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ ll
+total 16
+-rw------- 1 mmizi mmizi    0 лют 28 12:43 file_perm1
+---------- 1 mmizi mmizi    0 лют 28 12:43 file_perm2
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ chmod g+rw file_perm2
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ chmod o+r file_perm2
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ ll
+total 16
+-rw------- 1 mmizi mmizi    0 лют 28 12:43 file_perm1
+----rw-r-- 1 mmizi mmizi    0 лют 28 12:43 file_perm2
+################################ 4 #############################
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ sudo adduser test_m
+[sudo] password for mmizi:
+Sorry, try again.
+[sudo] password for mmizi:
+Sorry, try again.
+[sudo] password for mmizi:
+Adding user `test_m' ...
+Adding new group `test_m' (1002) ...
+Adding new user `test_m' (1002) with group `test_m' ...
+Creating home directory `/home/test_m' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for test_m
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n]
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ sudo usermod -aG sudo test_m
+(venv) 🍀 mmizi@5CD9292DVV ~/Documents/My_projects/GeekBrains/linux (main) 🦄 $ su test_m
+Password:
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+sudo ls -la /root/
+[sudo] password for test_m:
+total 44
+drwx------  7 root root 4096 лют  8 12:42 .
+drwxr-xr-x 25 root root 4096 лют 28 12:02 ..
+-rw-------  1 root root  239 лют 14 19:50 .bash_history
+-rw-r--r--  1 root root 3106 кві  9  2018 .bashrc
+drwx------  5 root root 4096 лют  8 12:42 .cache
+drwxr-xr-x  3 root root 4096 лют  8 12:42 .config
+drwx------  3 root root 4096 жов 23 18:19 .gnupg
+-rw-r--r--  1 root root  148 сер 17  2015 .profile
+drwxr-xr-x  7 root root 4096 лют 22 14:57 snap
+drwx------  2 root root 4096 жов 23 18:21 .ssh
+-rw-r--r--  1 root root  162 гру 15 00:02 .wget-hsts
+
+
+
+
